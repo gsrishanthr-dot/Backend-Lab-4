@@ -1,0 +1,63 @@
+{
+  "info": {
+    "name": "Lab 4 - Registration, login and JWT",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:3000" }],
+  "item": [
+    {
+      "name": "Register - success (201)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"username\": \"rahul_k\",\n  \"name\": \"Rahul Kumar\",\n  \"password\": \"rahul@123\"\n}" },
+        "url": "{{baseUrl}}/register/"
+      }
+    },
+    {
+      "name": "Register - existing username (400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"username\": \"rahul_k\",\n  \"name\": \"Rahul Kumar\",\n  \"password\": \"rahul@123\"\n}" },
+        "url": "{{baseUrl}}/register/"
+      }
+    },
+    {
+      "name": "Register - short password (400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"username\": \"anita_s\",\n  \"name\": \"Anita Singh\",\n  \"password\": \"123\"\n}" },
+        "url": "{{baseUrl}}/register/"
+      }
+    },
+    {
+      "name": "Login - success (200 + jwt_token)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"username\": \"rahul_k\",\n  \"password\": \"rahul@123\"\n}" },
+        "url": "{{baseUrl}}/login/"
+      }
+    },
+    {
+      "name": "Login - unknown user (400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"username\": \"nobody\",\n  \"password\": \"rahul@123\"\n}" },
+        "url": "{{baseUrl}}/login/"
+      }
+    },
+    {
+      "name": "Login - wrong password (400)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"username\": \"rahul_k\",\n  \"password\": \"wrong@123\"\n}" },
+        "url": "{{baseUrl}}/login/"
+      }
+    }
+  ]
+}
