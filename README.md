@@ -1,8 +1,8 @@
 # Lab 4: Registration, login and JWT
 
-Name: <your name> · Registration number: <your reg no> · Section: <your section>
+Name:  Srishanth Reddy · Registration number: 252U1R6092 · Section: CSE-AIML-2B
 
-**Live link:** <paste your Render / Railway / Cloud IDE URL here, or explain why it could not be deployed>
+**Live link:** (https://backend-lab-4-7rkt.onrender.com)
 
 ## How to run
 
